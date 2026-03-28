@@ -15,10 +15,12 @@ PREFIX = "tmp"
 DEFAULT_DOMAINS = ["w-w.indevs.in", "b-d.indevs.in", "m-m.indevs.in"]
 DOMAINS = ["w-w.indevs.in", "b-d.indevs.in", "m-m.indevs.in"]
 JWT_SECRET = "2ec70ca66a2c693f8f08f1da1d7feb09953a32d1c72bf9f47f1f24200dbcfcfb"
+ADMIN_PASSWORDS = ["2ec70ca66a2c693f8f08f1da1d7feb09953a32d1c72bf9f47f1f24200dbcfcfb"]
 BLACK_LIST = ""
 ENABLE_USER_CREATE_EMAIL = true
 ENABLE_USER_DELETE_EMAIL = true
 ENABLE_AUTO_REPLY = false
+E2E_TEST_MODE = true
 
 [[d1_databases]]
 binding = "DB"
