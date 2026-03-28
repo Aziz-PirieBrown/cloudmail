@@ -1,0 +1,25 @@
+name = "cloudflare-temp-email"
+main = "src/worker.ts"
+compatibility_date = "2025-04-01"
+compatibility_flags = ["nodejs_compat"]
+keep_vars = true
+routes = [
+  { pattern = "w-w.indevs.in", custom_domain = true },
+  { pattern = "b-d.indevs.in", custom_domain = true },
+  { pattern = "m-m.indevs.in", custom_domain = true }
+]
+
+[vars]
+PREFIX = "tmp"
+DEFAULT_DOMAINS = ["w-w.indevs.in", "b-d.indevs.in", "m-m.indevs.in"]
+DOMAINS = ["w-w.indevs.in", "b-d.indevs.in", "m-m.indevs.in"]
+JWT_SECRET = "2ec70ca66a2c693f8f08f1da1d7feb09953a32d1c72bf9f47f1f24200dbcfcfb"
+BLACK_LIST = ""
+ENABLE_USER_CREATE_EMAIL = true
+ENABLE_USER_DELETE_EMAIL = true
+ENABLE_AUTO_REPLY = false
+
+[[d1_databases]]
+binding = "DB"
+database_name = "cloudflare-temp-email"
+database_id = "c3686961-2c99-42a8-af48-672adff17c38"
