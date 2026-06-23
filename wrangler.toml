@@ -4,11 +4,12 @@ compatibility_date = "2025-04-01"
 compatibility_flags = ["nodejs_compat"]
 keep_vars = true
 workers_dev = true
-routes = [
-  { pattern = "w-w.indevs.in", custom_domain = true },
-  { pattern = "b-d.indevs.in", custom_domain = true },
-  { pattern = "m-m.indevs.in", custom_domain = true }
-]
+# custom domains - bind manually in Cloudflare Dashboard after deploy
+# routes = [
+#   { pattern = "w-w.indevs.in", custom_domain = true },
+#   { pattern = "b-d.indevs.in", custom_domain = true },
+#   { pattern = "m-m.indevs.in", custom_domain = true },
+# ]
 
 # email receiving binding (required for Workers to receive emails via Email Routing)
 send_email = [
