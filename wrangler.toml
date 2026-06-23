@@ -1,4 +1,4 @@
-name = "cloudflare-temp-email"
+name = "cloudmail"
 main = "src/worker.ts"
 compatibility_date = "2025-04-01"
 compatibility_flags = ["nodejs_compat"]
@@ -10,6 +10,15 @@ routes = [
   { pattern = "m-m.indevs.in", custom_domain = true }
 ]
 
+# email receiving binding (required for Workers to receive emails via Email Routing)
+send_email = [
+  { name = "SEND_MAIL" },
+]
+
+# enable cron for auto clean up expired emails (runs daily at midnight)
+[triggers]
+crons = ["0 0 * * *"]
+
 [vars]
 PREFIX = "tmp"
 DEFAULT_DOMAINS = ["w-w.indevs.in", "b-d.indevs.in", "m-m.indevs.in"]
@@ -20,7 +29,6 @@ BLACK_LIST = ""
 ENABLE_USER_CREATE_EMAIL = true
 ENABLE_USER_DELETE_EMAIL = true
 ENABLE_AUTO_REPLY = false
-E2E_TEST_MODE = true
 
 [[d1_databases]]
 binding = "DB"
