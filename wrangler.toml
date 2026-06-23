@@ -32,6 +32,7 @@ BLACK_LIST = ""
 ENABLE_USER_CREATE_EMAIL = true
 ENABLE_USER_DELETE_EMAIL = true
 ENABLE_AUTO_REPLY = false
+ENABLE_USER_REGISTRATION = true
 
 [[d1_databases]]
 binding = "DB"
