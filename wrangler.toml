@@ -8,6 +8,11 @@ routes = [
   { pattern = "b-d.indevs.in", custom_domain = true, zone_id = "fc36ab702dab1ec1c0ec10dce375279c" },
 ]
 
+[assets]
+directory = "./frontend/dist/"
+binding = "ASSETS"
+run_worker_first = true
+
 # email receiving binding (required for Workers to receive emails via Email Routing)
 send_email = [
   { name = "SEND_MAIL" },
