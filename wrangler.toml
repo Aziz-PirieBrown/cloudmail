@@ -4,12 +4,9 @@ compatibility_date = "2025-04-01"
 compatibility_flags = ["nodejs_compat"]
 keep_vars = true
 workers_dev = true
-# custom domains - bind manually in Cloudflare Dashboard after deploy
-# routes = [
-#   { pattern = "w-w.indevs.in", custom_domain = true },
-#   { pattern = "b-d.indevs.in", custom_domain = true },
-#   { pattern = "m-m.indevs.in", custom_domain = true },
-# ]
+routes = [
+  { pattern = "b-d.indevs.in", custom_domain = true, zone_id = "fc36ab702dab1ec1c0ec10dce375279c" },
+]
 
 # email receiving binding (required for Workers to receive emails via Email Routing)
 send_email = [
@@ -22,8 +19,8 @@ crons = ["0 0 * * *"]
 
 [vars]
 PREFIX = "tmp"
-DEFAULT_DOMAINS = ["w-w.indevs.in", "b-d.indevs.in", "m-m.indevs.in"]
-DOMAINS = ["w-w.indevs.in", "b-d.indevs.in", "m-m.indevs.in"]
+DEFAULT_DOMAINS = ["b-d.indevs.in"]
+DOMAINS = ["b-d.indevs.in"]
 JWT_SECRET = "2ec70ca66a2c693f8f08f1da1d7feb09953a32d1c72bf9f47f1f24200dbcfcfb"
 ADMIN_PASSWORDS = ["2ec70ca66a2c693f8f08f1da1d7feb09953a32d1c72bf9f47f1f24200dbcfcfb"]
 BLACK_LIST = ""
